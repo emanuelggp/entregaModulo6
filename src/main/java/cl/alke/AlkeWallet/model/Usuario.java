@@ -33,9 +33,9 @@ public class Usuario {
 
     // Relación con transacciones
     @OneToMany(mappedBy = "envio", cascade = CascadeType.ALL)
-    private List<Transaccion> envio;
+    private List<Transferencia> envio;
 
     @OneToMany(mappedBy = "recepcion", cascade = CascadeType.ALL)
-    private List<Transaccion> recepcion;
+    private List<Transferencia> recepcion;
 
 }

@@ -11,10 +11,10 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class Transaccion {
+public class Transferencia {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idTransaccion;
+    private Long idTransferencia;
 
     @ManyToOne
     @JoinColumn(name = "envio")
@@ -24,6 +24,6 @@ public class Transaccion {
     @JoinColumn(name = "recepcion")
     private Usuario recepcion;
 
-    private double monto;
+    private int monto;
     private Date fecha;
 }

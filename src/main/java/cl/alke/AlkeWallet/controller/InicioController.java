@@ -31,4 +31,10 @@ public class InicioController {
         }
         return "inicio";
     }
+
+    @GetMapping("/logout")
+    public String logout(HttpSession session) {
+        session.invalidate(); // Invalida la sesión actual
+        return "redirect:/";
+    }
 }
