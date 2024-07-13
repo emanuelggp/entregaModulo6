@@ -71,8 +71,8 @@
         <tbody>
         <tr th:each="transferencia : ${transferencias}">
             <td th:text="${transferencia.idTransferencia}">ID</td>
-            <td th:text="${transferencia.envio.email}">Emisor</td>
-            <td th:text="${transferencia.recepcion.email}">Receptor</td>
+            <td th:text="${transferencia.envio.nombre + ' ' + transferencia.envio.apellido}">Emisor</td>
+            <td th:text="${transferencia.recepcion.nombre + ' ' + transferencia.recepcion.apellido}">Receptor</td>
             <td th:text="${transferencia.monto}">Monto</td>
             <td th:text="${#dates.format(transferencia.fecha, 'dd/MM/yyyy HH:mm')}">Fecha</td>
         </tr>

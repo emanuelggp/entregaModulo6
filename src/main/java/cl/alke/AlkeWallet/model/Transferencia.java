@@ -10,7 +10,6 @@ import java.util.Date;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
 public class Transferencia {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,4 +25,15 @@ public class Transferencia {
 
     private int monto;
     private Date fecha;
+
+    @Override
+    public String toString() {
+        return "Transferencia{" +
+                "idTransferencia=" + idTransferencia +
+                ", envio=" + envio +
+                ", recepcion=" + recepcion +
+                ", monto=" + monto +
+                ", fecha=" + fecha +
+                '}';
+    }
 }

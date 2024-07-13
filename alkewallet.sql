@@ -32,7 +32,7 @@ CREATE TABLE `cuenta` (
   PRIMARY KEY (`idCuenta`),
   KEY `FKtjn6osho229d1l5hnlvb0futb` (`idUsuario`),
   CONSTRAINT `FKtjn6osho229d1l5hnlvb0futb` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`idUsuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_spanish2_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_spanish2_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,7 +41,7 @@ CREATE TABLE `cuenta` (
 
 LOCK TABLES `cuenta` WRITE;
 /*!40000 ALTER TABLE `cuenta` DISABLE KEYS */;
-INSERT INTO `cuenta` VALUES (1,0,350000,1),(2,0,150000,2),(3,0,0,1),(4,0,0,1),(5,0,0,1),(6,0,0,1),(7,0,0,1),(8,0,0,1),(9,0,0,1),(10,0,0,1),(11,0,0,2),(12,0,0,2),(13,0,0,2),(14,0,0,1),(15,0,0,2),(16,0,95000,3),(17,0,0,3);
+INSERT INTO `cuenta` VALUES (1,0,350000,1),(2,0,150000,2),(3,0,0,1),(4,0,0,1),(5,0,0,1),(6,0,0,1),(7,0,0,1),(8,0,0,1),(9,0,0,1),(10,0,0,1),(11,0,0,2),(12,0,0,2),(13,0,0,2),(14,0,0,1),(15,0,0,2),(16,0,95000,3),(17,0,0,3),(18,0,0,1),(19,0,0,3),(20,0,0,3),(21,0,0,2);
 /*!40000 ALTER TABLE `cuenta` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -63,7 +63,7 @@ CREATE TABLE `transferencia` (
   KEY `FKdudokq9un05da99s7i2mld1n` (`recepcion`),
   CONSTRAINT `FK4i2nnrqjlhvpj2u5h5829s65w` FOREIGN KEY (`envio`) REFERENCES `usuario` (`idUsuario`),
   CONSTRAINT `FKdudokq9un05da99s7i2mld1n` FOREIGN KEY (`recepcion`) REFERENCES `usuario` (`idUsuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_spanish2_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_spanish2_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -72,7 +72,7 @@ CREATE TABLE `transferencia` (
 
 LOCK TABLES `transferencia` WRITE;
 /*!40000 ALTER TABLE `transferencia` DISABLE KEYS */;
-INSERT INTO `transferencia` VALUES (1,'2024-07-10 10:52:52.158000',75000,1,2),(2,'2024-07-10 12:06:04.412000',50000,2,1);
+INSERT INTO `transferencia` VALUES (1,'2024-07-10 10:52:52.158000',75000,1,2),(2,'2024-07-10 12:06:04.412000',50000,2,1),(3,'2024-07-13 11:50:33.987000',50000,1,3),(4,'2024-07-13 12:27:08.463000',20000,3,2);
 /*!40000 ALTER TABLE `transferencia` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -100,7 +100,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES (1,'Perez',325000,'jperez@mail.com','Juan','1234'),(2,'Pino',175000,'apino@mail.com','Ana','9876'),(3,'Tapia',95000,'ptapia@mail.com','Pedro','6543');
+INSERT INTO `usuario` VALUES (1,'Perez',275000,'jperez@mail.com','Juan','1234'),(2,'Pino',195000,'apino@mail.com','Ana','9876'),(3,'Tapia',125000,'ptapia@mail.com','Pedro','6543');
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -113,4 +113,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-07-12 14:03:29
+-- Dump completed on 2024-07-13 12:28:12

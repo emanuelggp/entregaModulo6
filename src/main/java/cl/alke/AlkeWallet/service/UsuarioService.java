@@ -46,6 +46,12 @@ public class UsuarioService {
     public Usuario findByEmail(String email) {
         return usuarioDao.findByEmail(email);
     }
+
+    public List<Usuario> getAllUsuarios() {
+        return usuarioDao.findAll();
+    }
+
+
     @Transactional
     public Usuario findByEmailWithCuentas(String email) {
         Usuario usuario = usuarioDao.findByEmail(email);

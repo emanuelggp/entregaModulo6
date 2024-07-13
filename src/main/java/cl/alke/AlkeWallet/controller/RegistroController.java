@@ -17,13 +17,13 @@ public class RegistroController {
     private UsuarioService usuarioService;
 
     @GetMapping
-    public String showRegistroForm(Model model) {
+    public String mostrarFormularioRegistro(Model model) {
         model.addAttribute("usuario", new Usuario());
         return "registro";
     }
 
     @PostMapping
-    public String registerUser(Usuario usuario, Model model) {
+    public String registrarUsuario(Usuario usuario, Model model) {
         // Verificar si el usuario ya existe
         if (usuarioService.findByEmail(usuario.getEmail()) != null) {
             model.addAttribute("error", "El email ya está registrado.");

@@ -58,21 +58,25 @@
 
 <div class="container mt-5 col-4 bg-secondary text-center text-white rounded shadow">
     <h2>Realizar Transferencia</h2>
-    <form action="#" th:action="@{/transferencia}" th:object="${usuario}" method="post">
+
+    <div th:if="${mensajeExito}" class="alert alert-success" role="alert">
+        <span th:text="${mensajeExito}"></span>
+    </div>
+
+    <form th:action="@{/transferencia}" th:object="${transferencia}" method="post">
         <div class="mb-3">
-            <label for="emailDestino" class="form-label" >Email del destinatario</label>
-            <input type="email" class="form-control" id="emailDestino" name="emailDestino"
-                   placeholder="Ingrese email del destinatario" required>
+            <label for="receptor" class="form-label">Seleccionar Contacto</label>
+            <select id="receptor" class="form-select" th:field="*{recepcion}" required>
+                <option value="" disabled selected>Seleccione un contacto</option>
+                <option th:each="usuario : ${usuarios}" th:value="${usuario.email}"
+                        th:text="${usuario.nombre} + ' ' + ${usuario.apellido}"></option>
+            </select>
         </div>
         <div class="mb-3">
             <label for="monto" class="form-label">Monto</label>
-            <input type="number" class="form-control" id="monto" name="monto"
-                   placeholder="Ingrese el monto a transferir" required>
+            <input type="number" class="form-control" id="monto" th:field="*{monto}" required>
         </div>
-        <div class="mb-3 text-danger" th:if="${error}">
-            <p th:text="${error}"></p>
-        </div>
-        <button type="submit" class="btn btn-dark">Transferir</button>
+        <button type="submit" class="btn btn-dark">Enviar</button>
     </form>
 </div>
 
